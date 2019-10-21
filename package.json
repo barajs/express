@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git@github.com:barajs/express.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -17,11 +20,8 @@
     "compile": "tsc -b",
     "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'"
   },
-  "peerDependencies": {
-    "@barajs/bara": "^3.0.0-alpha.413"
-  },
   "dependencies": {
-    "@barajs/bara": "^3.0.0-alpha.413",
+    "@barajs/core": "3.0.0-alpha.414",
     "express": "4.17.1"
   },
   "devDependencies": {

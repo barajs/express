@@ -1,4 +1,4 @@
-import { portion, flow, popEvent, popSeep } from '@barajs/bara'
+import { portion, flow, popEvent, popSeep } from '@barajs/core'
 import express, { Application } from 'express'
 
 import { WhenRequest, ExpressMold } from './types'

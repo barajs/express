@@ -1,6 +1,6 @@
 {
   "name": "@barajs/express",
-  "version": "2.0.0-alpha.1",
+  "version": "0.0.0-development",
   "description": "Bara Express integration module",
   "repository": {
     "type": "git",
@@ -19,13 +19,14 @@
     "start": "tsnd --debounce 3000 --respawn server.ts",
     "compile": "tsc -b",
     "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
-    "semantic-release": "semantic-release --branches --dryRun"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@barajs/core": "3.0.0-alpha.414",
     "express": "4.17.1"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "3.0.4",
     "@semantic-release/commit-analyzer": "6.3.0",
     "@semantic-release/git": "7.0.16",
     "@semantic-release/github": "5.5.4",
@@ -35,8 +36,5 @@
     "semantic-release": "15.13.27",
     "ts-node-dev": "1.0.0-pre.43",
     "typescript": "3.6.4"
-  },
-  "release": {
-    "branches": ["master", {"name": "alpha", "prerelease": true}]
   }
 }

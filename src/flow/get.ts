@@ -11,6 +11,7 @@ import { hasQuery, hasPath, hasMountPoint } from '../seep'
 
 export const whenCustomGet = flow<WhenCustomRoute, Application, ExpressMold>({
   bootstrap: ({ context: expressApp, mold, next }) => {
+    if (!mold.routes) return
     const {
       routes: { get = [] },
     } = mold

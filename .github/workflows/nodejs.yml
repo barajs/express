@@ -23,7 +23,7 @@ jobs:
         run: |
           npm install
           npm run compile
-      - name: release
+      - name: release-master
         uses: brpaz/action-semantic-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,3 +32,12 @@ jobs:
           dry_run: "false"
           install_plugins: "@semantic-release/npm @semantic-release/changelog"
           branch: master
+      - name: release-alpha
+        uses: brpaz/action-semantic-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          dry_run: "false"
+          install_plugins: "@semantic-release/npm @semantic-release/changelog"
+          branch: alpha

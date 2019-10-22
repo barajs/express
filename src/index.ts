@@ -28,6 +28,7 @@ const ExpressServer = portion<WhenRequest, Application, ExpressMold>({
 const {
   whenInitialized: whenExpressStarted,
   whenAnyGet,
+  whenRootGet,
   whenCustomGet,
   whenAnyPost,
 } = popEvent(ExpressServer)
@@ -38,9 +39,11 @@ const { hasMountPoint } = popSeep(whenCustomGet)
 const { hasPostQuery, hasPostPath } = popSeep(whenAnyPost)
 
 export {
+  ExpressServer,
   whenExpressStarted,
   // HTTP Get
   whenAnyGet,
+  whenRootGet,
   whenCustomGet,
   hasGetQuery,
   hasGetPath,

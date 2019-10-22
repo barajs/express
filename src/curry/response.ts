@@ -33,3 +33,10 @@ export const sendRawResultOf = (
     response.send(err.message)
   }
 }
+
+/**
+ * Send static file to client
+ */
+export const sendFile = (filePath: string) => ({ response }: WhenRequest) => {
+  response.sendFile(filePath)
+}

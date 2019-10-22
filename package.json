@@ -35,5 +35,11 @@
     "semantic-release": "15.13.27",
     "ts-node-dev": "1.0.0-pre.43",
     "typescript": "3.6.4"
+  },
+  "release": {
+    "branches": [
+      "master",
+      { "name": "alpha", "prerelease": true }
+    ]
   }
 }

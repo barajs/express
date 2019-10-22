@@ -58,6 +58,15 @@ export const whenCustomGet = flow<WhenCustomRoute, Application, ExpressMold>({
   },
 })
 
+export const whenRootGet = flow<WhenRequest, Application, ExpressMold>({
+  bootstrap: ({ context: expressApp, next }) => {
+    expressApp.get('/', (request: Request, response: Response) => {
+      next({ request, response })
+    })
+  },
+  seep: { hasGetQuery: hasQuery },
+})
+
 /**
  * This flow must be place in the most end of this file because
  * Express do register the route in order, if put this function

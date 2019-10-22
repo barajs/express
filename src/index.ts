@@ -28,6 +28,7 @@ const ExpressServer = portion<WhenRequest, Application, ExpressMold>({
 const {
   whenInitialized: whenExpressStarted,
   whenAnyGet,
+  whenRootGet,
   whenCustomGet,
   whenAnyPost,
 } = popEvent(ExpressServer)
@@ -41,6 +42,7 @@ export {
   whenExpressStarted,
   // HTTP Get
   whenAnyGet,
+  whenRootGet,
   whenCustomGet,
   hasGetQuery,
   hasGetPath,

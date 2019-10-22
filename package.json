@@ -19,7 +19,7 @@
     "start": "tsnd --debounce 3000 --respawn server.ts",
     "compile": "tsc -b",
     "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release --branches --dryRun"
   },
   "dependencies": {
     "@barajs/core": "3.0.0-alpha.414",
@@ -37,9 +37,6 @@
     "typescript": "3.6.4"
   },
   "release": {
-    "branches": [
-      "master",
-      { "name": "alpha", "prerelease": true }
-    ]
+    "branches": ["master", {"name": "alpha", "prerelease": true}]
   }
 }

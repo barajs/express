@@ -12,7 +12,7 @@ import { hasQuery, hasPath, hasMountPoint } from '../seep'
 export const whenCustomGet = flow<WhenCustomRoute, Application, ExpressMold>({
   bootstrap: ({ context: expressApp, mold, next }) => {
     const {
-      routes: { get },
+      routes: { get = [] },
     } = mold
     for (const route of get) {
       const isPureMountPoint = typeof route === 'string'
@@ -22,29 +22,18 @@ export const whenCustomGet = flow<WhenCustomRoute, Application, ExpressMold>({
 
       const middleware =
         !isPureMountPoint && 'mountPoint' in (route as RouteConfig)
-          ? (req: Request, res: Response, next: NextFunction) => {
-              const uses = (route as RouteConfig).uses || []
-              for (const use of uses) {
-                use(req, res, next)
-              }
-            }
+          ? (route as RouteConfig).uses
           : null
-
-      console.log(
-        `custom get: ${route} - mountPoint ${mountPoint} - middleware: ${middleware}`,
-      )
 
       if (middleware) {
         expressApp.use(
           mountPoint,
           middleware,
           (request: Request, response: Response) => {
-            console.log(request, response, mountPoint)
             next({ request, response, mountPoint })
           },
         )
       } else {
-        console.log(`Normal custom get`, mountPoint)
         expressApp.get(mountPoint, (request: Request, response: Response) => {
           next({ request, response, mountPoint })
         })

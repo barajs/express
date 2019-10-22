@@ -39,6 +39,7 @@ const { hasMountPoint } = popSeep(whenCustomGet)
 const { hasPostQuery, hasPostPath } = popSeep(whenAnyPost)
 
 export {
+  ExpressServer,
   whenExpressStarted,
   // HTTP Get
   whenAnyGet,

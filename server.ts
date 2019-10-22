@@ -4,14 +4,24 @@ import Express, {
   whenExpressStarted,
   whenAnyGet,
   whenAnyPost,
+  whenCustomGet,
   hasGetQuery,
+  hasMountPoint,
   WhenRequest,
   hasPostPath,
+  WhenCustomRoute,
 } from './src'
 
 run(
   app({
-    portion: [Express({ port: 3200 })],
+    portion: [
+      Express({
+        port: 3200,
+        routes: {
+          get: ['/item/:id'],
+        },
+      }),
+    ],
     trigger: [
       whenExpressStarted(
         act(({ port }: any) =>
@@ -25,6 +35,14 @@ run(
           act(({ request, response }: WhenRequest) => {
             const { query } = request
             response.send({ success: true, query })
+          }),
+        ),
+      ),
+      whenCustomGet(
+        cond(
+          hasMountPoint('/item/:id'),
+          act(({ response, mountPoint }: WhenCustomRoute) => {
+            response.send({ success: true, mountPoint })
           }),
         ),
       ),

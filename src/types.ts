@@ -5,7 +5,27 @@ export interface WhenRequest {
   response: Response
 }
 
+export interface WhenCustomRoute extends WhenRequest {
+  mountPoint: string
+}
+
+export interface RouteConfig {
+  mountPoint: string
+  /**
+   * Use any middleware for a specific route
+   */
+  uses?: any[]
+}
+
+export interface ExpressMoldRoute {
+  get?: Array<string | RouteConfig>
+  post?: Array<string | RouteConfig>
+  put?: Array<string | RouteConfig>
+  patch?: Array<string | RouteConfig>
+}
+
 export interface ExpressMold {
   port?: number
-  middlewares?: any[]
+  uses?: any[]
+  routes: ExpressMoldRoute
 }

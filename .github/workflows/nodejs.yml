@@ -17,18 +17,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install, build, and test
-        env: # Or as an environment variable
+        env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install
           npm run compile
       - name: release
-        uses: brpaz/action-semantic-release@v1
         env:
+          CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        with:
-          dry_run: "false"
-          install_plugins: "@semantic-release/npm @semantic-release/changelog"
-          branch: master
+        run:
+          npm run semantic-release

@@ -13,9 +13,9 @@ const ExpressServer = portion<WhenRequest, Application, ExpressMold>({
   },
   whenInitialized: flow({
     bootstrap: ({ context: expressApp, next, mold }: any) => {
-      const { port, middlewares } = mold
-      if (middlewares && middlewares.length > 0) {
-        for (const mw of middlewares) expressApp.use(mw)
+      const { port, uses } = mold
+      if (uses && uses.length > 0) {
+        for (const middleware of uses) expressApp.use(middleware)
       }
       expressApp.listen(port, function() {
         next({ port })
@@ -28,18 +28,25 @@ const ExpressServer = portion<WhenRequest, Application, ExpressMold>({
 const {
   whenInitialized: whenExpressStarted,
   whenAnyGet,
+  whenCustomGet,
   whenAnyPost,
 } = popEvent(ExpressServer)
 
 const { hasGetQuery, hasGetPath } = popSeep(whenAnyGet)
+const { hasMountPoint } = popSeep(whenCustomGet)
+
 const { hasPostQuery, hasPostPath } = popSeep(whenAnyPost)
 
 export {
   whenExpressStarted,
+  // HTTP Get
   whenAnyGet,
-  whenAnyPost,
+  whenCustomGet,
   hasGetQuery,
   hasGetPath,
+  hasMountPoint,
+  // HTTP Post
+  whenAnyPost,
   hasPostQuery,
   hasPostPath,
 }

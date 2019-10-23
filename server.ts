@@ -1,8 +1,9 @@
-import { run, app, act, cond } from '@barajs/core'
+import { run, app, act, cond, and, or } from '@barajs/core'
 
 import Express, {
   whenExpressStarted,
   whenAnyGet,
+  whenRootGet,
   whenAnyPost,
   whenCustomGet,
   hasGetQuery,
@@ -10,6 +11,8 @@ import Express, {
   WhenRequest,
   hasPostPath,
   WhenCustomRoute,
+  hasGetPath,
+  sendJSONResultOf,
 } from './src'
 
 run(
@@ -27,11 +30,18 @@ run(
         act(({ port }: any) =>
           console.log(`Express server started on http://localhost:${port}`),
         ),
-        act(() => console.log('Hello from Bara trigger')),
+        act(() => console.log('This is the demo Expres server with Bara')),
+      ),
+      whenRootGet(
+        act(sendJSONResultOf(() => Promise.resolve({ success: true }))),
       ),
       whenAnyGet(
         cond(
-          hasGetQuery('first'),
+          and(
+            hasGetPath('first'),
+            or(hasGetQuery('pretty'), hasGetQuery('clean')),
+          ),
+          // or(hasGetQuery('pretty'), hasGetQuery('clean')),
           act(({ request, response }: WhenRequest) => {
             const { query } = request
             response.send({ success: true, query })

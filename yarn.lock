@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@barajs/core@3.0.0-alpha.414":
-  version "3.0.0-alpha.414"
-  resolved "https://registry.npmjs.org/@barajs/core/-/core-3.0.0-alpha.414.tgz#e48763679fc1413607486e52e53647eb5b291d81"
-  integrity sha512-KjTCATJt1T/eYTUwvR6b18YKZO64GmmVUz2ZieCPvUWrfnxsgf9mOBoIuc3H1ovUbjrsViY41NPeKAP6r1rxng==
+"@barajs/core@3.0.0-alpha.415":
+  version "3.0.0-alpha.415"
+  resolved "https://registry.npmjs.org/@barajs/core/-/core-3.0.0-alpha.415.tgz#0a613e3f3327191cfb08dd8bc7192daf7298ef3d"
+  integrity sha512-/GleOtkJe+eByVBMTU5/zCsiRUP6KpNXqYnwDnHBaPbPSXaZF0gqniQdTWTXiGYX7QlFU5ieAXVG+uv1HgOHqA==
   dependencies:
     p-all "2.1.0"
     xstream "11.11.0"

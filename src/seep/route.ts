@@ -1,11 +1,22 @@
 import { WhenRequest } from '../types'
 
 export const hasQuery = (query?: string) => ({ request }: WhenRequest) => {
+  console.log(
+    `[seep] hasQuery: ${query}: ${!!request.query &&
+      query &&
+      query in request.query}`,
+  )
   return !!request.query && query && query in request.query
 }
 
 export const hasPath = (path?: string) => ({ request }: WhenRequest) => {
-  return request.originalUrl === path
+  console.log(
+    `[seep] hasPath: ${path} - ${(request.originalUrl as string).includes(
+      path,
+    )}`,
+    request.originalUrl,
+  )
+  return (request.originalUrl as string).includes(path)
 }
 
 export const hasMountPoint = (mountPoint: string) => ({

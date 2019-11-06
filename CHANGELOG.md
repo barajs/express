@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/barajs/express/compare/v1.5.2...v1.5.3) (2019-11-06)
+
+
+### Bug Fixes
+
+* **flow:** post wrong func ([17cce31](https://github.com/barajs/express/commit/17cce3151d24d6eef842a20d7bdf44f5572a555f))
+
 ## [1.5.2](https://github.com/barajs/express/compare/v1.5.1...v1.5.2) (2019-11-06)
 
 

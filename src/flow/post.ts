@@ -51,7 +51,7 @@ export const whenCustomPost = flow<WhenCustomRoute, Application, ExpressMold>({
     }
   },
   seep: {
-    hasMountPoint,
+    hasPostMountPoint: hasMountPoint,
     hasPostQuery: hasQuery,
     hasPostPath: hasPath,
   },

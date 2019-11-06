@@ -30,11 +30,13 @@ const {
   whenAnyGet,
   whenRootGet,
   whenCustomGet,
+  whenCustomPost,
   whenAnyPost,
 } = popEvent(ExpressServer)
 
 const { hasGetQuery, hasGetPath } = popSeep(whenAnyGet)
 const { hasMountPoint } = popSeep(whenCustomGet)
+const { hasPostMountPoint } = popSeep(whenCustomPost)
 
 const { hasPostQuery, hasPostPath } = popSeep(whenAnyPost)
 
@@ -45,6 +47,7 @@ export {
   whenAnyGet,
   whenRootGet,
   whenCustomGet,
+  whenCustomPost,
   hasGetQuery,
   hasGetPath,
   hasMountPoint,
@@ -52,6 +55,7 @@ export {
   whenAnyPost,
   hasPostQuery,
   hasPostPath,
+  hasPostMountPoint,
 }
 
 export * from './types'

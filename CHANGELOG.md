@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/barajs/express/compare/v1.4.0...v1.5.0) (2019-11-06)
+
+
+### Bug Fixes
+
+* **deps:** upgrade @barajs/core to alpha.415 ([644a454](https://github.com/barajs/express/commit/644a454e8a117a432dcf76407cc121a67e61f3ba))
+
+
+### Features
+
+* **flow:** add whenCustomPost flow ([78abb03](https://github.com/barajs/express/commit/78abb03e186c205db0a07353c6f636eae0466d67))
+
 # [1.4.0](https://github.com/barajs/express/compare/v1.3.0...v1.4.0) (2019-10-22)
 
 

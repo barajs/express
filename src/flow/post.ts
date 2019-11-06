@@ -44,7 +44,7 @@ export const whenCustomPost = flow<WhenCustomRoute, Application, ExpressMold>({
           },
         )
       } else {
-        expressApp.get(mountPoint, (request: Request, response: Response) => {
+        expressApp.post(mountPoint, (request: Request, response: Response) => {
           next({ request, response, mountPoint })
         })
       }

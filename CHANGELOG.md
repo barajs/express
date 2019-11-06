@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/barajs/express/compare/v1.5.3...v1.5.4) (2019-11-06)
+
+
+### Bug Fixes
+
+* **flow:** move whenAnyPost to bottom of the registration flows ([2da017f](https://github.com/barajs/express/commit/2da017f1e07c7ccda206964c9f3dd09f23f1fda5))
+
 ## [1.5.3](https://github.com/barajs/express/compare/v1.5.2...v1.5.3) (2019-11-06)
 
 

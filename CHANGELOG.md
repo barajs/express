@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/barajs/express/compare/v1.5.0...v1.5.1) (2019-11-06)
+
+
+### Bug Fixes
+
+* **index:** forgot to export method ([e4da0d2](https://github.com/barajs/express/commit/e4da0d254cc28d0db7eb028b46a646468e026ef2))
+
 # [1.5.0](https://github.com/barajs/express/compare/v1.4.0...v1.5.0) (2019-11-06)
 
 

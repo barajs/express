@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/barajs/express/compare/v1.5.1...v1.5.2) (2019-11-06)
+
+
+### Bug Fixes
+
+* **flow:** post ([c51897c](https://github.com/barajs/express/commit/c51897cc94611912f578b2fb4b8a8f5e29baf90c))
+
 ## [1.5.1](https://github.com/barajs/express/compare/v1.5.0...v1.5.1) (2019-11-06)
 
 

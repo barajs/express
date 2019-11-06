@@ -9,15 +9,6 @@ import {
 } from '../types'
 import { hasQuery, hasPath, hasMountPoint } from '../seep'
 
-export const whenAnyPost = flow<WhenRequest, Application, ExpressMold>({
-  bootstrap: ({ context: expressApp, next }) => {
-    expressApp.post('*', (request: Request, response: Response) => {
-      next({ request, response })
-    })
-  },
-  seep: { hasPostQuery: hasQuery, hasPostPath: hasPath },
-})
-
 export const whenCustomPost = flow<WhenCustomRoute, Application, ExpressMold>({
   bootstrap: ({ context: expressApp, mold, next }) => {
     if (!mold.routes) return
@@ -55,4 +46,18 @@ export const whenCustomPost = flow<WhenCustomRoute, Application, ExpressMold>({
     hasPostQuery: hasQuery,
     hasPostPath: hasPath,
   },
+})
+
+/**
+ * This flow must be place in the most end of this file because
+ * Express do register the route in order, if put this function
+ * before any get route, it would overlap all the route below it.
+ */
+export const whenAnyPost = flow<WhenRequest, Application, ExpressMold>({
+  bootstrap: ({ context: expressApp, next }) => {
+    expressApp.post('*', (request: Request, response: Response) => {
+      next({ request, response })
+    })
+  },
+  seep: { hasPostQuery: hasQuery, hasPostPath: hasPath },
 })

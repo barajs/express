@@ -33,7 +33,11 @@ run(
         act(() => console.log('This is the demo Expres server with Bara')),
       ),
       whenRootGet(
-        act(sendJSONResultOf(() => Promise.resolve({ success: true }))),
+        act(
+          sendJSONResultOf(() =>
+            Promise.resolve({ success: true, hello: 'world' }),
+          ),
+        ),
       ),
       whenAnyGet(
         cond(
@@ -41,12 +45,14 @@ run(
             hasGetPath('first'),
             or(hasGetQuery('pretty'), hasGetQuery('clean')),
           ),
-          // or(hasGetQuery('pretty'), hasGetQuery('clean')),
           act(({ request, response }: WhenRequest) => {
             const { query } = request
             response.send({ success: true, query })
           }),
         ),
+        act(({ request }: WhenRequest) => {
+          console.log(`[/GET] ${request.originalUrl}`)
+        }),
       ),
       whenCustomGet(
         cond(

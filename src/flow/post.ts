@@ -27,17 +27,19 @@ export const whenCustomPost = flow<WhenCustomRoute, Application, ExpressMold>({
           : null
 
       if (middleware) {
-        expressApp.use(
+        expressApp.post(
           mountPoint,
           middleware,
           (request: Request, response: Response) => {
             next({ request, response, mountPoint })
           },
         )
+        console.log(`Register POST at ${mountPoint} with middleware.`)
       } else {
         expressApp.post(mountPoint, (request: Request, response: Response) => {
           next({ request, response, mountPoint })
         })
+        console.log(`Register POST at ${mountPoint}.`)
       }
     }
   },

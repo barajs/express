@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/barajs/express/compare/v1.5.4...v1.6.0) (2019-11-13)
+
+
+### Features
+
+* **mold:** add usesAt for specific middleware route ([0c8ab22](https://github.com/barajs/express/commit/0c8ab22a3f8f5b4c2926c4e0b9243dc7ded1c02e))
+
 ## [1.5.4](https://github.com/barajs/express/compare/v1.5.3...v1.5.4) (2019-11-06)
 
 

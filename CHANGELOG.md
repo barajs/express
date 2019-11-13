@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/barajs/express/compare/v1.6.0...v1.6.1) (2019-11-13)
+
+
+### Bug Fixes
+
+* **flow:** post not correctly register post function ([c125bd8](https://github.com/barajs/express/commit/c125bd838264e42d3236c800ea9800051016e018))
+
 # [1.6.0](https://github.com/barajs/express/compare/v1.5.4...v1.6.0) (2019-11-13)
 
 

@@ -13,9 +13,15 @@ const ExpressServer = portion<WhenRequest, Application, ExpressMold>({
   },
   whenInitialized: flow({
     bootstrap: ({ context: expressApp, next, mold }: any) => {
-      const { port, uses } = mold
+      const { port, uses, usesAt } = mold as ExpressMold
       if (uses && uses.length > 0) {
         for (const middleware of uses) expressApp.use(middleware)
+      }
+      if (usesAt && usesAt.length > 0) {
+        for (const use of usesAt) {
+          const { route, middleware } = use
+          expressApp.use(route, middleware)
+        }
       }
       expressApp.listen(port, function() {
         next({ port })

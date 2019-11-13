@@ -9,6 +9,11 @@ export interface WhenCustomRoute extends WhenRequest {
   mountPoint: string
 }
 
+export interface RouteUseAt {
+  route: string
+  middleware: any
+}
+
 export interface RouteConfig {
   mountPoint: string
   /**
@@ -28,4 +33,5 @@ export interface ExpressMold {
   port?: number
   uses?: any[]
   routes: ExpressMoldRoute
+  usesAt?: RouteUseAt[]
 }

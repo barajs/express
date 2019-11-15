@@ -18,12 +18,11 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@barajs/core@3.0.0-alpha.415":
-  version "3.0.0-alpha.415"
-  resolved "https://registry.npmjs.org/@barajs/core/-/core-3.0.0-alpha.415.tgz#0a613e3f3327191cfb08dd8bc7192daf7298ef3d"
-  integrity sha512-/GleOtkJe+eByVBMTU5/zCsiRUP6KpNXqYnwDnHBaPbPSXaZF0gqniQdTWTXiGYX7QlFU5ieAXVG+uv1HgOHqA==
+"@barajs/core@^3.0.0-alpha.427":
+  version "3.0.0-alpha.427"
+  resolved "https://registry.npmjs.org/@barajs/core/-/core-3.0.0-alpha.427.tgz#c9c4684411b68325619dfb73fae4dac58ccd5be4"
+  integrity sha512-kNhLBoAw6q59Msxv2h09ekQnWqeBi+4RLZyluZ9jda4In6qTs4kC3AUwc9jdT+63GguEfgja5fml45OpB2zFpg==
   dependencies:
-    p-all "2.1.0"
     xstream "11.11.0"
 
 "@nodelib/fs.scandir@2.1.3":
@@ -3445,13 +3444,6 @@ osenv@^0.1.4, osenv@^0.1.5:
   dependencies:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
-
-p-all@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/p-all/-/p-all-2.1.0.tgz#91419be56b7dee8fe4c5db875d55e0da084244a0"
-  integrity sha512-HbZxz5FONzz/z2gJfk6bFca0BCiSRF8jU3yCsWOen/vR6lZjfPOu/e7L3uFzTW1i0H8TlC3vqQstEJPQL4/uLA==
-  dependencies:
-    p-map "^2.0.0"
 
 p-defer@^1.0.0:
   version "1.0.0"

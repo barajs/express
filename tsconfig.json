@@ -8,6 +8,10 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "declaration": true,
+    "lib": [
+      "es2015",
+      "esnext"
+    ],
     "outDir": "dist"
   },
   "include": ["src/**/*"]

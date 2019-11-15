@@ -65,5 +65,5 @@ export {
 }
 
 export * from './types'
-export * from './curry'
+export * from './formula'
 export default ExpressServer

@@ -64,6 +64,6 @@ export {
   hasPostMountPoint,
 }
 
-export * from './types'
 export * from './formula'
+export * from './types'
 export default ExpressServer

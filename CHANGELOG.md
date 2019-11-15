@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/barajs/express/compare/v1.6.2...v1.7.0) (2019-11-15)
+
+
+### Features
+
+* **formula:** add @barajs/formula and upgrade curry functions ([27e9692](https://github.com/barajs/express/commit/27e96923d92d84c6c320ba3a9b9b1d56eb2d1f31))
+* **formula:** add sendAsJSON formula ([dbdee76](https://github.com/barajs/express/commit/dbdee762cd28c03b5a2aec7d986408317c9dfaab))
+
 ## [1.6.2](https://github.com/barajs/express/compare/v1.6.1...v1.6.2) (2019-11-15)
 
 

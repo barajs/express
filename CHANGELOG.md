@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/barajs/express/compare/v1.6.1...v1.6.2) (2019-11-15)
+
+
+### Bug Fixes
+
+* **deps:** upgrade @barajs/core ([064e8d1](https://github.com/barajs/express/commit/064e8d1cdcf6357e800a23a3da869001fa31aee6))
+
 ## [1.6.1](https://github.com/barajs/express/compare/v1.6.0...v1.6.1) (2019-11-13)
 
 
